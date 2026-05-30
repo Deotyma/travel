@@ -12,7 +12,11 @@ class CityCard extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Image.asset('assets/images/paris.jpg', fit: BoxFit.cover),
+            Ink.image(
+              image: AssetImage('assets/images/paris.jpg'),
+              fit: BoxFit.cover,
+              child: InkWell(onTap: () {}),
+            ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
