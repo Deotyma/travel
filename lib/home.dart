@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'city_card.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -17,18 +18,7 @@ class Home extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Card(
-              elevation: 5,
-              child: SizedBox(
-                height: 150,
-                child: Image.asset(
-                  'assets/images/paris.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
+          children: <Widget>[CityCard()],
         ),
       ),
     );
