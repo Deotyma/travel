@@ -9,7 +9,36 @@ class CityCard extends StatelessWidget {
       elevation: 5,
       child: SizedBox(
         height: 150,
-        child: Image.asset('assets/images/paris.jpg', fit: BoxFit.cover),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Image.asset('assets/images/paris.jpg', fit: BoxFit.cover),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const <Widget>[
+                        Icon(Icons.star_border, color: Colors.yellow, size: 30),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Paris',
+                        style: TextStyle(color: Colors.white, fontSize: 30),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
