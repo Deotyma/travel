@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/activity.model.dart';
 import '../../data/data.dart' as data;
+import 'widgets/activity_card.dart';
 
 class City extends StatefulWidget {
   const City({super.key});
@@ -10,7 +11,7 @@ class City extends StatefulWidget {
 }
 
 class _CityState extends State<City> {
-  List<Activity> activities = [];
+  final List<Activity> activities = data.activities;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,15 @@ class _CityState extends State<City> {
         actions: const <Widget>[Icon(Icons.more_vert)],
       ),
       body: Container(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: const <Widget>[Text('City Content')]),
+        padding: const EdgeInsets.all(10),
+        child: GridView.builder(
+          itemCount: activities.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (context, index) =>
+              ActivityCard(activity: activities[index]),
+        ),
       ),
     );
   }

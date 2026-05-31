@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/home/home.dart';
+//import 'views/home/home.dart';
 import 'views/city/city.dart';
 
 void main() => runApp(const DymaTrip());
@@ -12,7 +12,7 @@ class DymaTrip extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //home: Home(),
-      home: const City(),
+      home: City(),
     );
   }
 }
