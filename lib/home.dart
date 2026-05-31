@@ -19,6 +19,13 @@ class _HomeState extends State<Home> {
       'isFavorite': false,
     },
   ];
+
+  void toggleFavorite(int index) {
+    setState(() {
+      cities[index]['isFavorite'] = !cities[index]['isFavorite'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +46,7 @@ class _HomeState extends State<Home> {
                   name: city['name'],
                   image: city['image'],
                   isFavorite: city['isFavorite'],
+                  toggleFavorite: () => toggleFavorite(cities.indexOf(city)),
                 ),
               )
               .toList(),
