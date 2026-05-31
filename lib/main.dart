@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'views/home/home.dart';
 
 void main() => runApp(const DymaTrip());
 
